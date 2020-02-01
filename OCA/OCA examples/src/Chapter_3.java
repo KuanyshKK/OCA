@@ -97,6 +97,21 @@ public class Chapter_3 {
 		LocalDateTime dateTime = LocalDateTime.of(date,time);
 		System.out.println(dateTime);
 		
+		dateTime = dateTime.minusDays(1);
+		System.out.println(dateTime);
+		dateTime = dateTime.minusHours(10);
+		System.out.println(dateTime);
+		dateTime = dateTime.minusSeconds(30);
+		System.out.println(dateTime);
+		
+		LocalDate date_1 = LocalDate.of(2020, Month.JANUARY, 15);
+		LocalTime time_1 = LocalTime.of(5, 15);
+		LocalDateTime dateTime_1 = LocalDateTime.of(date_1, time_1)
+				.minusDays(5).minusHours(2).minusSeconds(30);
+		System.out.println(dateTime_1);
+		
+		
+		
 		
 		
 		
