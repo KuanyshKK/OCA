@@ -92,7 +92,7 @@ public class Chapter_3 {
 		date = date.plusMonths(2);
 		System.out.println();*/
 		
-		LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
+		/*LocalDate date = LocalDate.of(2020, Month.JANUARY, 20);
 		LocalTime time = LocalTime.of(15, 25);
 		LocalDateTime dateTime = LocalDateTime.of(date,time);
 		System.out.println(dateTime);
@@ -108,12 +108,39 @@ public class Chapter_3 {
 		LocalTime time_1 = LocalTime.of(5, 15);
 		LocalDateTime dateTime_1 = LocalDateTime.of(date_1, time_1)
 				.minusDays(5).minusHours(2).minusSeconds(30);
-		System.out.println(dateTime_1);
+		System.out.println(dateTime_1);*/
 		
+		LocalDate start = LocalDate.of(2015, Month.JANUARY, 1);
+		LocalDate end = LocalDate.of(2015, Month.MARCH, 30);
 		
+		performAnimalEncrichment(start, end);
 		
+		LocalDate start2 = LocalDate.of(2015, Month.JANUARY, 1);
+		LocalDate end2 = LocalDate.of(2015, Month.MARCH, 15);
+		Period period = Period.ofMonths(1);
+		performAnimalEnrichment(start2, end2, period);
+		LocalDate end3 = LocalDate.of(2020, Month.MARCH, 10);
+		Period annualy = Period.ofYears(1);
+		performAnimalEnrichment(start2, end3, annualy);
+		Period quarterly = Period.ofMonths(3);
+		performAnimalEnrichment(start2, end3, quarterly);
 		
-		
-		
+	}
+	
+	private static void performAnimalEncrichment(LocalDate start, LocalDate end) {
+		LocalDate upTo = start;
+		while(upTo.isBefore(end)) {
+			System.out.println("give new toy: " + upTo);
+			upTo = upTo.plusMonths(1);
+		}
+	}
+	
+	private static void performAnimalEnrichment(LocalDate start, LocalDate end,
+			Period period) {
+		LocalDate upTo = start;
+		while(upTo.isBefore(end)) {
+			System.out.println("give new toy: " + upTo);
+			upTo = upTo.plus(period);
+		}
 	}
 }
