@@ -110,7 +110,8 @@ public class Chapter_3 {
 				.minusDays(5).minusHours(2).minusSeconds(30);
 		System.out.println(dateTime_1);*/
 		
-		LocalDate start = LocalDate.of(2015, Month.JANUARY, 1);
+		//Working with periods
+		/*LocalDate start = LocalDate.of(2015, Month.JANUARY, 1);
 		LocalDate end = LocalDate.of(2015, Month.MARCH, 30);
 		
 		performAnimalEncrichment(start, end);
@@ -123,7 +124,15 @@ public class Chapter_3 {
 		Period annualy = Period.ofYears(1);
 		performAnimalEnrichment(start2, end3, annualy);
 		Period quarterly = Period.ofMonths(3);
-		performAnimalEnrichment(start2, end3, quarterly);
+		performAnimalEnrichment(start2, end3, quarterly);*/
+		
+		//Formatting Dates and Times
+		
+		LocalDate date = LocalDate.of(2020, Month.FEBRUARY, 3);
+		System.out.println(date.getDayOfWeek());
+		System.out.println(date.getMonth());
+		System.out.println(date.getYear());
+		System.out.println(date.getDayOfYear());
 		
 	}
 	
