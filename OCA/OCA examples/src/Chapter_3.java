@@ -1,6 +1,9 @@
 
 import java.util.*;
+import java.text.DateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 public class Chapter_3 {
 	/**
@@ -128,11 +131,37 @@ public class Chapter_3 {
 		
 		//Formatting Dates and Times
 		
-		LocalDate date = LocalDate.of(2020, Month.FEBRUARY, 3);
-		System.out.println(date.getDayOfWeek());
-		System.out.println(date.getMonth());
-		System.out.println(date.getYear());
-		System.out.println(date.getDayOfYear());
+//		LocalDate date = LocalDate.of(2020, Month.FEBRUARY, 3);
+//		System.out.println(date.getDayOfWeek());
+//		System.out.println(date.getMonth());
+//		System.out.println(date.getYear());
+//		System.out.println(date.getDayOfYear());
+//		
+//		System.out.println("***");
+		LocalDate date2 = LocalDate.of(2020, Month.JANUARY, 20);
+		LocalTime time2 = LocalTime.of(11, 12, 34);
+		LocalDateTime dateTime2 = LocalDateTime.of(date2,time2);
+//		System.out.println(date2.format(DateTimeFormatter.ISO_LOCAL_DATE));
+//		System.out.println(time2.format(DateTimeFormatter.ISO_LOCAL_TIME));
+//		System.out.println(dateTime2.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+//
+//		System.out.println("***");
+		DateTimeFormatter shortDateTime = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+		System.out.println(shortDateTime.format(dateTime2));
+		System.out.println(shortDateTime.format(date2));
+		//System.out.println(shortDateTime.format(time2));
+		System.out.println("***");
+		DateTimeFormatter shortDateTime2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT);
+		System.out.println(dateTime2.format(shortDateTime2));
+		System.out.println(date2.format(shortDateTime2));
+		//System.out.println(time2.format(shortDateTime2));
+		
+		DateTimeFormatter shortF = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT);
+		DateTimeFormatter mediumF = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+		System.out.println(shortF.format(dateTime2));
+		System.out.println(mediumF.format(dateTime2));
+		
+		
 		
 	}
 	
