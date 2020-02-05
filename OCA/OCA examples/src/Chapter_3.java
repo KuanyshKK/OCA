@@ -161,7 +161,10 @@ public class Chapter_3 {
 		System.out.println(shortF.format(dateTime2));
 		System.out.println(mediumF.format(dateTime2));
 		
+		//Own formatter 
 		
+		DateTimeFormatter f = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm");
+		System.out.println(dateTime2.format(f));
 		
 	}
 	
