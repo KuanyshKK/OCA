@@ -166,6 +166,14 @@ public class Chapter_3 {
 		DateTimeFormatter f = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm");
 		System.out.println(dateTime2.format(f));
 		
+		//Parsing Dates and Times
+		
+		DateTimeFormatter f2 = DateTimeFormatter.ofPattern("MM dd yyyy");
+		LocalDate date3 = LocalDate.parse("01 02 2015" ,f2);
+		LocalTime time3 = LocalTime.parse("11:22");
+		System.out.println(date3);
+		System.out.println(time3);
+		
 	}
 	
 	private static void performAnimalEncrichment(LocalDate start, LocalDate end) {
